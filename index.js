@@ -112,8 +112,6 @@ async function run() {
         const avatarUrl = core.getInput('avatarUrl');
         
         const context = github.context;
-        const obstr = JSON.stringify(context, undefined, 2)
-        core.debug(`The event github.context: ${obstr}`);
 
         const hook = new webhook.Webhook(webhookUrl);
 
