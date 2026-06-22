@@ -6,8 +6,8 @@ This sends a notification to discord using a webhook URL. It is written in JavaS
 
 To use this, get on Discord and create a new webhook. Then get on GitHub, go into your project settings, and add a new Secret called `DISCORD_WEBHOOK`. In your workflow YAML, set `webhookUrl` as follows: `webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}`. You must set webhookUrl this way for each invocation of the action.
 
-- Use `rjstone/discord-webhook-notify@v1` if you want bugfixes but nothing backward-compatability breaking. (If anything breaks compatability it will be in v2+.)
-- Use `rjstone/discord-webhook-notify@v1.0.0` (or another specific tag after the @) if you want to guarantee use of a specific revision.
+- Use `step-security/discord-webhook-notify@v1` if you want bugfixes but nothing backward-compatability breaking. (If anything breaks compatability it will be in v2+.)
+- Use `step-security/discord-webhook-notify@v1` (or another specific tag after the @) if you want to guarantee use of a specific revision.
 
 See below for more documentation and detailed examples.
 
@@ -57,21 +57,21 @@ Set up notification for whatever conditions you want. There's no built-in handli
 
 ```
 - name: Test Success
-    uses: rjstone/discord-webhook-notify@v1
+    uses: step-security/discord-webhook-notify@v1
     if: success()
     with:
         severity: info
         details: Test Succeeded!
         webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 - name: Test Failure
-    uses: rjstone/discord-webhook-notify@v1
+    uses: step-security/discord-webhook-notify@v1
     if: failure()
     with:
         severity: error
         details: Test Failed!
         webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 - name: Test Cancelled
-    uses: rjstone/discord-webhook-notify@v1
+    uses: step-security/discord-webhook-notify@v1
     if: cancelled()
     with:
         severity: warn
@@ -87,19 +87,19 @@ This shows the appearance of notifications where most of the inputs are left at 
 
 ```
 - name: Test Info
-    uses: rjstone/discord-webhook-notify@v1
+    uses: step-security/discord-webhook-notify@v1
     with:
         severity: info
         details: Test succeeded.
         webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 - name: Test Warn
-    uses: rjstone/discord-webhook-notify@v1
+    uses: step-security/discord-webhook-notify@v1
     with:
         severity: warn
         details: Test warning.
         webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 - name: Test Error
-    uses: rjstone/discord-webhook-notify@v1
+    uses: step-security/discord-webhook-notify@v1
     with:
         severity: error
         details: Test error.
@@ -114,7 +114,7 @@ This shows you where each custom input shows up in the formatting of the Discord
 
 ```
 - name: Test Custom
-    uses: rjstone/discord-webhook-notify@v1
+    uses: step-security/discord-webhook-notify@v1
     with:
         severity: info
         username: CustomUsername
