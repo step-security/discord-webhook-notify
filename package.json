@@ -10,8 +10,8 @@
   "author": "step-security",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.6",
-    "@actions/github": "^1.1.0",
+    "@actions/core": "^2.0.0",
+    "@actions/github": "^6.0.0",
     "axios": "^1.16.0",
     "webhook-discord": "^3.5.1"
   },
