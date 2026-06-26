@@ -16,6 +16,6 @@
     "webhook-discord": "^3.5.1"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.38.4"
+    "@vercel/ncc": "^0.44.0"
   }
 }
